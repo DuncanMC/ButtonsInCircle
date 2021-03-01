@@ -18,7 +18,7 @@ class ViewController: UIViewController {
 
     var radius: CGFloat = 75.0  // The radius to use (will be updated at runtime based on the size of the container view.)
 
-    //A type to hld a layout anchor for a button, it's index, and whether it's a horizontal or veritical anchor
+    //A type to hold a layout anchor for a button, it's index, and whether it's a horizontal or veritical anchor
     typealias ConstraintTuple = (index: Int, anchor: NSLayoutConstraint, axis: NSLayoutConstraint.Axis)
 
     //An array of the layout anchors for our buttons.
@@ -31,7 +31,6 @@ class ViewController: UIViewController {
                 let angle = Double(index) * self.angleStep
                 let xOffset = self.radius * CGFloat(cos(angle))
                 let yOffset = self.radius * CGFloat(sin(angle))
-                //            print("Button \(index) xOffset = \(xOffset), yOffset = \(yOffset)")
                 if axis == .horizontal {
                     constraint.constant = xOffset
                 } else {
@@ -41,27 +40,26 @@ class ViewController: UIViewController {
     }
 
     override func viewDidLayoutSubviews() {
+        //Pick a radius that's a little less than 1/2 the shortest side of our bounding rectangle
         radius = min(buttonContainerView.bounds.width, buttonContainerView.bounds.height) / 2 - 30
         print("Radius = \(radius)")
         updateButtonConstraints()
     }
 
-    @IBAction func buttonWasTapped(_ sender: UIButton) {
-        print("Button was tapped")
-    }
-
     func createButtons() {
         for index in 0 ..< buttonCount {
 
-            //Creat a button
+            //Create a button
             let button = UIButton(primaryAction:
+                                    //Define the button title, and the action to trigger when it's tapped.
                                     UIAction(title: "Button \(index+1)") { action in
                                         print("Button \(index + 1) tapped")
                                     }
             )
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.layer.borderWidth = 1.0
+            button.translatesAutoresizingMaskIntoConstraints = false //Remember to do this for UIViews you create in code
+            button.layer.borderWidth = 1.0  // Draw a rounded rect around the button so you can see it
             button.layer.cornerRadius = 5
+
             button.setTitle("\(index+1)", for: .normal)
             button.setTitleColor(.blue, for: .normal)
 

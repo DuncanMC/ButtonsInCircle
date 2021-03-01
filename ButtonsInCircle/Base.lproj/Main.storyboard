@@ -21,6 +21,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LZx-sq-Mbp" secondAttribute="height" multiplier="1:1" id="8ib-DV-ARd"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="800" constant="374" id="EhI-ip-Ryf"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -41,13 +42,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LZx-sq-Mbp" secondAttribute="trailing" constant="20" id="6CM-B5-mVV"/>
-                            <constraint firstItem="LZx-sq-Mbp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OL7-Ix-493"/>
+                            <constraint firstItem="LZx-sq-Mbp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CU8-g6-GR8"/>
+                            <constraint firstItem="LZx-sq-Mbp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IGZ-Jm-5Jw"/>
                             <constraint firstItem="rkP-bQ-cnC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="aVn-y1-CNZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LZx-sq-Mbp" secondAttribute="trailing" constant="20" id="bML-Sr-nd9"/>
                             <constraint firstItem="rkP-bQ-cnC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hE7-5A-OLb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LZx-sq-Mbp" secondAttribute="bottom" constant="20" id="hGO-in-HNe"/>
                             <constraint firstItem="LZx-sq-Mbp" firstAttribute="top" secondItem="rkP-bQ-cnC" secondAttribute="bottom" constant="20" id="rah-cX-oQL"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="buttonContainerView" destination="LZx-sq-Mbp" id="xXi-7b-0w6"/>
